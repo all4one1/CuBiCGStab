@@ -83,7 +83,7 @@
   <ItemGroup>
     <ClInclude Include="src\CudaExtras.h" />
     <ClInclude Include="src\CuCG.h" />
-    <ClInclude Include="src\enums.h" />
+    <ClInclude Include="src\kernels.h" />
     <ClInclude Include="src\ReductionM.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

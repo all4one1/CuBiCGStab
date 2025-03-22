@@ -3,7 +3,6 @@
 #include <vector>
 #include <cooperative_groups.h>
 #include <cooperative_groups/reduce.h>
-#include "enums.h"
 namespace cg = cooperative_groups;
 
 namespace CuCG
