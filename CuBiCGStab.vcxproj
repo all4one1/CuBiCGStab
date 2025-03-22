@@ -80,6 +80,12 @@
   <ItemGroup>
     <CudaCompile Include="src\main.cu" />
   </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="src\CudaExtras.h" />
+    <ClInclude Include="src\CuCG.h" />
+    <ClInclude Include="src\enums.h" />
+    <ClInclude Include="src\ReductionM.h" />
+  </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
     <Import Project="$(VCTargetsPath)\BuildCustomizations\CUDA 12.8.targets" />
