@@ -78,13 +78,13 @@
     </CudaCompile>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <CudaCompile Include="src\main.cu" />
+    <CudaCompile Include="main.cu" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="src\CudaExtras.h" />
-    <ClInclude Include="src\CuCG.h" />
-    <ClInclude Include="src\kernels.h" />
-    <ClInclude Include="src\ReductionM.h" />
+    <ClInclude Include="CudaExtras.h" />
+    <ClInclude Include="CuCG.h" />
+    <ClInclude Include="kernels.h" />
+    <ClInclude Include="ReductionM.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
