@@ -1,6 +1,7 @@
 #include "kernels.h"
 
-
+namespace CuCG
+{
     __global__ void check()
     {
         printf("device: \n");
@@ -141,3 +142,4 @@
             res[i] = scalar;
         }
     }
+}
