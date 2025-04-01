@@ -75,16 +75,26 @@
     <CudaCompile>
       <TargetMachinePlatform>64</TargetMachinePlatform>
       <CodeGeneration>compute_89,sm_89</CodeGeneration>
+      <GenerateRelocatableDeviceCode>true</GenerateRelocatableDeviceCode>
     </CudaCompile>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <CudaCompile Include="main.cu" />
+    <CudaCompile Include="CuCG.cu" />
+    <CudaCompile Include="kernels.cu" />
+    <CudaCompile Include="autotest.cu">
+      <FileType>Document</FileType>
+    </CudaCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="CudaExtras.h" />
     <ClInclude Include="CuCG.h" />
     <ClInclude Include="kernels.h" />
     <ClInclude Include="ReductionM.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <CudaCompile Include="ReductionM.cu">
+      <FileType>Document</FileType>
+    </CudaCompile>
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

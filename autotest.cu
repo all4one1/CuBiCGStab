@@ -4,7 +4,7 @@ using namespace std;
 
 int main()
 {
-	// example: 
+	// auto-test example: 
 
 	int n = 6;	// rank of a square matrix 
 	int nval = 24;	// number of non-zero elements of a matrix
@@ -14,7 +14,7 @@ int main()
 	int column[24] = { 0, 1, 2, 0, 1, 2, 3, 0, 1, 2, 3, 4, 1, 2, 3, 4, 5, 2, 3, 4, 5, 3, 4, 5 };
 	int row[7] = { 0, 3, 7, 12, 17, 21, 24 };
 
-	CuCG::SparseMatrixCuda SMC(n, nval, sparse_matrix_elements, column, row);
+	SparseMatrixCuda SMC(n, nval, sparse_matrix_elements, column, row);
 
 	double fh[6] = { 0, 0, 0, 0, 0, 0 };
 	double bh[6] = { 1, 2, 3, 3, 2, 1 };
@@ -25,10 +25,10 @@ int main()
 
 	cudaMemcpy(d0, fh, sizeof(double) * n, cudaMemcpyHostToDevice);
 	cudaMemcpy(b, bh, sizeof(double) * n, cudaMemcpyHostToDevice);
-	CuCG::CudaLaunchSetup kernel(6);
+	CudaLaunchSetup kernel(6);
 
 	// solver usage:
-	CuCG::BiCGSTAB solver_cg(6, d, d0, b, SMC, kernel);
+	BiCGSTAB solver_cg(6, d, d0, b, SMC, kernel);
 	solver_cg.solve_with_graph(d, d0, b, SMC); // #1 
 	//solver_cg.solve_directly(d, d0, b, SMC); // #2 
 
